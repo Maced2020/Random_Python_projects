@@ -1,3 +1,6 @@
+#this is used to update the webgames website automaticlly so that I dont have to run
+# multiple commands everytime. 
+
 import os
 import time
 import sys
