@@ -34,11 +34,19 @@ if directoryfound == True:
 
 if question1.upper() == "Y" or question1.upper() == "YES":
     os.system("sudo rm -r " + webgames_folder_path)
+    print("------------------------------------------")
     print(webgames_folder_path + " has been deleted.")
+    print("------------------------------------------")
+    print()
+    print()
     filedeleted = True
 else:
+    print("------------------------------------------")
     print("no folder deleted")
     print("aborting")
+    print("------------------------------------------")
+    print()
+    print()
     time.sleep(2)
     sys.exit(1)
 
@@ -49,7 +57,11 @@ time.sleep(2)
 
 if filedeleted or directoryfound == False:
     os.system(githubcommand)
+    print("------------------------------------------")
     print("repository downloaded")
+    print("------------------------------------------")
+    print()
+    print()
 
 time.sleep(2)
 
@@ -57,10 +69,18 @@ time.sleep(2)
 # Check if the HTML directory has contents
 if any(os.scandir(htmlfolder)):  
     htmlfolderhascontents = True
+    print("------------------------------------------")
     print("The HTML folder has stuff in it.")
+    print("------------------------------------------")
+    print()
+    print()
     if not os.path.exists(backupfolder):
         time.sleep(2)
+        print("------------------------------------------")
         print("making backup folder as one does not exist")
+        print("------------------------------------------")
+        print()
+        print()
         os.mkdir(backupfolder)
         time.sleep(2)
 
@@ -72,16 +92,28 @@ time.sleep(2)
 # if there is stuff in the folder then it deletes everything.
 if any(os.scandir(backupfolder)):
     os.system(deletebackupfoldercommand)
+    print("------------------------------------------")
     print('The backup folder has been cleaned out.')
+    print("------------------------------------------")
+    print()
+    print()
 else:
+    print("------------------------------------------")
     print('Nothing in the backup folder')
+    print("------------------------------------------")
+    print()
+    print()
 
 time.sleep(2)
 
 # if the HTML folder has anything in it, it will be backed up into the backup folder
 if htmlfolderhascontents:
     os.system(backuphtmlfolder)
+    print("--------------------------------------------------")
     print("The items from the webpage have been backed up.")
+    print("--------------------------------------------------")
+    print()
+    print()
     htmlfolderbackedup = True
 
 time.sleep(2)
@@ -89,7 +121,11 @@ time.sleep(2)
 if htmlfolderbackedup:
     os.system(deletehtmlfolder)
     htmlfolderhascontents2 = False
+    print("------------------------------------------")
     print("HTML directory emptied")
+    print("------------------------------------------")
+    print()
+    print()
 
 time.sleep(2)
 
@@ -97,9 +133,17 @@ time.sleep(2)
 if htmlfolderhascontents2 == False:
     os.system(copywebgamescontentsintohtml)
     os.system(copywebgamesfolderintohtml)
+    print("------------------------------------------")
     print("HTML directory updated")
+    print("------------------------------------------")
+    print()
+    print()
     time.sleep(2)
+    print("------------------------------------------")
     print("automation finished.")
+    print("------------------------------------------")
+    print()
+    print()
     sys.exit(1)
 
 
